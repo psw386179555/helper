@@ -1,5 +1,5 @@
 .idea
 composer.lock
-thinkphp
+log
 runtime
 application/database.php

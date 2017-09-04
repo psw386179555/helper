@@ -14,5 +14,4 @@ use think\Route;
 
 Route::group('api/:version/banner',function (){
     Route::get('','api/:version.Banner/getBanner');
-    Route::get('/:id','api/:version.Article/getArticle',[],['id'=>'\d+']);
 });
