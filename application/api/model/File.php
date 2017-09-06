@@ -11,12 +11,12 @@ namespace app\api\model;
 
 class File extends BaseModel
 {
-    public function saveFile($path)
+    public function saveFile($path,$from=1)
     {
         $file = self::create([
-            'file_url'=>$path
+            'file_url'=>$path,
+            'from' => $from
         ]);
-
         return $file->id;
     }
 }
