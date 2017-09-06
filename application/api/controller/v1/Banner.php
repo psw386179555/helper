@@ -9,7 +9,7 @@
 namespace app\api\controller\v1;
 use app\api\model\Banner as BannerModel;
 
-class Banner
+class Banner extends BaseController
 {
     public function getBanner()
     {

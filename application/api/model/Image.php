@@ -19,4 +19,13 @@ class Image extends BaseModel
     {
         return Config::get('settings.img_prefix').$value;
     }
+
+    public function saveImage($path)
+    {
+        $img = self::create([
+            'img_url'=>$path
+        ]);
+
+        return $img->id;
+    }
 }
