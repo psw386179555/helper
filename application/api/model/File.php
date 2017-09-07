@@ -9,14 +9,23 @@
 namespace app\api\model;
 
 
+use think\Config;
+
 class File extends BaseModel
 {
-    public function saveFile($path,$from=1)
+    protected $visible = ['file_name','file_url'];
+    public function saveFile($path,$file_name,$from=1)
     {
         $file = self::create([
+            'file_name'=>$file_name,
             'file_url'=>$path,
             'from' => $from
         ]);
         return $file->id;
+    }
+
+    public function getFileUrlAttr($value)
+    {
+        return Config::get('settings.file_prefix').$value;
     }
 }
