@@ -12,7 +12,7 @@ namespace app\api\validate;
 class MessageValidate extends BaseValidate
 {
     protected $rule = [
-        'content'=>'isNotEmpty'
+        'content'=>'require|isNotEmpty'
     ];
     protected $message = [
         'content' => 'content can not be empty'

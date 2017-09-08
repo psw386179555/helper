@@ -15,12 +15,19 @@ use app\api\validate\MessageValidate;
 
 class Say extends BaseController
 {
-    public function addSay($data)
+    public function addSay($content)
     {
         (new MessageValidate())->goCheck();
         $uid = Token::getCurrentUid();
-        $data['id'] = $uid;
+        $data['uid'] = $uid;
+        $data['content'] = $content;
         $res = Message::addSay($data);
+        return $res;
+    }
+
+    public function getSayList()
+    {
+        $res = Message::getSayList();
         return $res;
     }
 }

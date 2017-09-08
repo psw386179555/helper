@@ -11,6 +11,8 @@ namespace app\api\model;
 
 class Message extends BaseModel
 {
+    protected $visible=['content','user','create_time'];
+
     public static function addSay($data)
     {
         $res = self::create($data);
@@ -19,7 +21,7 @@ class Message extends BaseModel
 
     public static function getSayList()
     {
-        $res = self::with('user')->all(function($query){
+        $res = self::with('user')->select(function($query){
             $query->order('create_time desc');
         });
 
@@ -28,6 +30,6 @@ class Message extends BaseModel
 
     public function user()
     {
-        return $this->hasOne('User','uid','id');
+        return $this->hasOne('User','id','uid');
     }
 }
