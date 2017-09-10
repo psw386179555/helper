@@ -32,3 +32,13 @@ Route::group('api/:version/health',function (){
 Route::group('api/:version/upload',function (){
     Route::post('/file','api/:version.Upload/uploadFile');
 });
+
+Route::group('api/:version/say',function (){
+    Route::post('/add','api/:version.Say/addSay');
+    Route::get('/list','api/:version.Say/getSayList');
+});
+
+
+Route::group('api/:version/user',function (){
+    Route::post('/add','api/:version.User/addUser');
+});
