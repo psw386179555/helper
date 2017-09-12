@@ -9,8 +9,8 @@
 namespace app\api\controller\v1;
 
 
-use app\api\validate\HealthValidate;
 use app\api\model\Health as HealthModel;
+use app\api\validate\HealthValidate;
 
 class Health extends BaseController
 {
@@ -34,4 +34,5 @@ class Health extends BaseController
         $res = HealthModel::showHealthRet($page,$rows);
         return $res;
     }
+
 }
