@@ -82,20 +82,22 @@ class Upload
 
         if ($info) {
 
-            $path = getUploadPath('/uploads/' . $info->getSaveName());
+            $primary_path = getUploadPath('/uploads/' . $info->getSaveName());
 
             $filename = $info->getInfo('name');
 
             $fileModel = new FileModel();
 
-            $fileID = $fileModel->saveFile($path,$filename);
+            $fileID = $fileModel->saveFile($primary_path,$filename);
 
-            $path = Config::get('settings.img_prefix').$path;
+            $path = Config::get('settings.img_prefix').$primary_path;
+
 
             $res = [
                 'file_name'=>$filename,
                 'file_id'=>(int)$fileID,
-                'path'=>$path
+                'path'=>$path,
+                'primary_path'=>$primary_path
             ];
 
             return $res;
