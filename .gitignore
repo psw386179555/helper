@@ -2,4 +2,4 @@
 log
 runtime
 application/database.php
-public/uploads/
+public/uploads
