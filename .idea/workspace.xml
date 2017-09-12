@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f6c28c9-6488-454d-9622-7ec2adf8cc71" name="默认的" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+    <list default="true" id="2f6c28c9-6488-454d-9622-7ec2adf8cc71" name="默认的" comment="&#10;添加PHPExcel&#10;&#10;Signed-off-by: 斯文 &lt;386179555@qq.com&gt;&#10;">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/log/201709/03.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/log/201709/04.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/log/201709/06.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/log/201709/07.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/log/201709/08.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/log/201709/09.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/log/201709/11.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/runtime/cache/02/6d6fd40ad58188db62e2c16224b60f.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/runtime/cache/20/88313ec3c380aa1e8f8aae7f97b43a.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/runtime/cache/30/db0657077a5c25d8ad731767d2f4a3.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/runtime/cache/43/7c6018842101df14c7ba07fb6aa5db.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/runtime/cache/50/4d5bd9c714f97d2002999a618e8b47.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/runtime/cache/65/ed83bf18a5cbf8f34080a2603830d0.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/runtime/cache/68/0e21dad596a3301db6e0e1f1c72e87.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/runtime/cache/6b/820af3a205ee49718d9e176ea7965c.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/runtime/cache/7f/af1f17898f25bccf0f1eacfa4024c7.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/runtime/cache/87/c1516135d951643aa379bee0398398.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/runtime/cache/89/3703228315b276c98279c38bdd3cdf.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/runtime/cache/94/b5cbeac798c9b0e7f4d9deae5e3e56.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/runtime/cache/9e/be5fb5adbc2819bea0a89bfa222430.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/runtime/cache/b7/4c5a02c362e427017d8c3597110a42.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/runtime/cache/dd/7f911483f73f676a59c29282607acd.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -299,7 +320,7 @@
       <workItem from="1505053976024" duration="1742000" />
       <workItem from="1505137605290" duration="3169000" />
       <workItem from="1505214627709" duration="1240000" />
-      <workItem from="1505215947853" duration="4488000" />
+      <workItem from="1505215947853" duration="4588000" />
     </task>
     <task id="LOCAL-00001" summary="这是测试">
       <created>1504420791784</created>
@@ -413,11 +434,18 @@
       <option name="project" value="LOCAL" />
       <updated>1505220339668</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="&#10;添加PHPExcel&#10;&#10;Signed-off-by: 斯文 &lt;386179555@qq.com&gt;&#10;">
+      <created>1505220459028</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1505220459028</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58547000" />
+    <option name="totallyTimeSpent" value="58647000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -504,7 +532,8 @@
     <MESSAGE value="&#10;添加我想说接口&#10;&#10;Signed-off-by: 斯文 &lt;386179555@qq.com&gt;&#10;" />
     <MESSAGE value="&#10;完善我想说接口&#10;&#10;Signed-off-by: 斯文 &lt;386179555@qq.com&gt;&#10;" />
     <MESSAGE value="&#10;添加composer等文件&#10;&#10;Signed-off-by: 斯文 &lt;386179555@qq.com&gt;&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;添加composer等文件&#10;&#10;Signed-off-by: 斯文 &lt;386179555@qq.com&gt;&#10;" />
+    <MESSAGE value="&#10;添加PHPExcel&#10;&#10;Signed-off-by: 斯文 &lt;386179555@qq.com&gt;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;添加PHPExcel&#10;&#10;Signed-off-by: 斯文 &lt;386179555@qq.com&gt;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -888,7 +917,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
