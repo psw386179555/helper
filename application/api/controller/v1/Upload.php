@@ -82,7 +82,7 @@ class Upload
 
         if ($info) {
 
-            $primary_path = getUploadPath('/uploads/' . $info->getSaveName());
+            $primary_path = getUploadPath('./uploads/' . $info->getSaveName());
 
             $filename = $info->getInfo('name');
 

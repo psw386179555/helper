@@ -12,10 +12,12 @@ namespace app\api\validate;
 class HealthValidate extends BaseValidate
 {
     protected $rule=[
-        'file_id'=>'require|isNotEmpty'
+        'file_id'=>'require|isNotEmpty',
+        'week'=>'require|isNotEmpty'
     ];
 
     protected $message=[
-        'file_id'=>'file_id can not be empty'
+        'file_id'=>'file_id can not be empty',
+        'week'=>'week can not be empty'
     ];
 }
