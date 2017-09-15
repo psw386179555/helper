@@ -25,6 +25,7 @@ Route::group('api/:version/token',function (){
 
 Route::group('api/:version/health',function (){
     Route::post('/wechat/list','api/:version.Health/showListForWechat');
+    Route::post('/wechat/room','api/:version.Health/getDataByRoom');
     Route::post('/app/add','api/:version.Health/addHealthRet');
     Route::post('/app/list','api/:version.Health/showHealthRet');
 });

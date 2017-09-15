@@ -7,44 +7,79 @@
  */
 
 namespace app\api\service;
+use app\api\model\HealthData;
 use think\Loader;
 
 class ExcelDeal
 {
-   public static function deal($path)
+    public static function saveExcelData($path,$week,$year)
+    {
+        $data = self::dealExcel($path,$week,$year);
+        $res = HealthData::saveData($data);
+        return $res;
+    }
+
+   public static function dealExcel($path,$week,$year)
    {
        Loader::import('PHPExcel.PHPExcel');
        Loader::import('PHPExcel.PHPExcel.IOFactory.PHPExcel_IOFactory');
-//       Loader::import('PHPExcel.Classes.PHPExcel.Reader.Excel5');
+       Loader::import('PHPExcel.Classes.PHPExcel.Reader.Excel5');
         $fileType = \PHPExcel_IOFactory::identify($path);
         $objReader =\PHPExcel_IOFactory::createReader($fileType);
         $obj_PHPExcel= $objReader->load($path);
-
+        $data = [];
+        $i = 0;
         foreach ($obj_PHPExcel->getWorksheetIterator() as $sheetKey => $sheet){//循环sheet
-            foreach ($sheet->getRowIterator() as $row){ //逐行处理
-                if($sheetKey < 5 ){
-                    if ($row->getRowIndex()<2){
-                        continue;
-                    }//前五个sheet才需要去除第一行
-                }
+            if($sheetKey < 5 ){
+            foreach ($sheet->getRowIterator() as $rowKey => $row){ //逐行处理
+            if ($row->getRowIndex()<2){
+                continue;
+            }//前五个sheet才需要去除第一行
+
+                $item = [];
                 foreach ($row->getCellIterator() as $cell){ //逐列处理
-                    //TODO::处理数据
+                   array_push($item,$cell->getCalculatedValue());
+                }
+                if(self::checkData($item)){
+                    $dataItem = self::prepareValue($item,$i,$data,$sheetKey,$week,$year);
+                }else{
+                    continue;
+                }
+                array_push($data,$dataItem);
+                $i++;
                 }
             }
         }
-
-
-//        $excel_array=$obj_PHPExcel->getsheet(0)->toArray();   //转换为数组格式
-//        array_shift($excel_array);  //删除第一个数组(标题);
-//        $city = [];
-//        foreach($excel_array as $k=>$v) {
-//               $city[$k]['Id'] = $v[0];
-//               $city[$k]['code'] = $v[1];
-//               $city[$k]['path'] = $v[2];
-//               $city[$k]['pcode'] = $v[3];
-//               $city[$k]['name'] = $v[4];
-//           }
-
+        return $data;
    }
+
+   private static function checkData($item)
+   {
+       if ($item[1]&&$item[2]&&$item[3]&&$item[4]&&$item[5]){
+           return true;
+       }else{
+           return false;
+       }
+   }
+
+   private static function prepareValue($item,$i,$data,$sheetKey,$week,$year)
+   {
+       $dataItem['year'] = $year;
+       $dataItem['week'] = $week;
+       $dataItem['class'] = ($item[0]==null)?$data[$i-1]['class']:$item[0];
+       $dataItem['room'] = $item[1];
+       $dataItem['bed'] = $item[2];
+       $dataItem['floor'] = $item[3];
+       $dataItem['desktop'] = $item[4];
+       $dataItem['balcony'] = $item[5];
+       $dataItem['room_score'] = $item[6];
+       if($sheetKey<4){
+           $dataItem['rank'] = ($item[7]==null)?$data[$i-1]['rank']:$item[7];;
+           $dataItem['class_score'] =round(($item[8]==null)&&($data[$i-1]['class_score']!=null)?$data[$i-1]['class_score']:$item[8],2);
+       }
+       return $dataItem;
+   }
+
+
 
 }
