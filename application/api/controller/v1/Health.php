@@ -33,8 +33,8 @@ class Health extends BaseController
         Db::startTrans();
         try{
 
-            $data = ExcelDeal::saveExcelData($file_path,$week,$year);
-            $res = HealthModel::addHealthRet($title,$file_id);
+            $data = ExcelDeal::saveExcelData($file_path,$week,$year,$file_id);
+            $res = HealthModel::addHealthRet($title,$file_id,$week,$year);
             Db::commit();
         }catch (Exception $e){
             Db::rollback();
@@ -43,9 +43,9 @@ class Health extends BaseController
         return true;
     }
 
-    public function showHealthRet($page,$rows)
+    public function showHealthRet($page,$limit)
     {
-        $res = HealthModel::showHealthRet($page,$rows);
+        $res = HealthModel::showHealthRet($page,$limit);
         return $res;
     }
 
