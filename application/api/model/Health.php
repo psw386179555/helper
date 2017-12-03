@@ -19,11 +19,14 @@ class Health extends BaseModel
      * @param $file_id
      * @return $this
      */
-    public static function addHealthRet($title,$file_id)
+    public static function addHealthRet($title,$file_id,$week,$year)
     {
         $res = self::create([
             'title'=>$title,
-            'file_id'=>$file_id
+            'file_id'=>$file_id,
+            'year' => $year,
+            'week' => $week
+
         ]);
         return $res;
     }
@@ -43,6 +46,8 @@ class Health extends BaseModel
 
         $arr['total']= $total;
         $arr['rows'] = $res;
+        $arr['status'] = 200;
+        $arr['msg'] = '成功！';
         return $arr;
     }
 

@@ -49,3 +49,8 @@ Route::group('api/:version/say',function (){
 Route::group('api/:version/user',function (){
     Route::post('/add','api/:version.User/addUser');
 });
+
+Route::group('api/:version/heart',function (){
+    Route::post('/add','api/:version.Heart/add');
+    Route::post('/show','api/:version.Heart/show');
+});

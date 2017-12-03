@@ -12,14 +12,14 @@ use think\Loader;
 
 class ExcelDeal
 {
-    public static function saveExcelData($path,$week,$year)
+    public static function saveExcelData($path,$week,$year,$file_id)
     {
-        $data = self::dealExcel($path,$week,$year);
+        $data = self::dealExcel($path,$week,$year,$file_id);
         $res = HealthData::saveData($data);
         return $res;
     }
 
-   public static function dealExcel($path,$week,$year)
+   public static function dealExcel($path,$week,$year,$data_from)
    {
        Loader::import('PHPExcel.PHPExcel');
        Loader::import('PHPExcel.PHPExcel.IOFactory.PHPExcel_IOFactory');
@@ -41,7 +41,7 @@ class ExcelDeal
                    array_push($item,$cell->getCalculatedValue());
                 }
                 if(self::checkData($item)){
-                    $dataItem = self::prepareValue($item,$i,$data,$sheetKey,$week,$year);
+                    $dataItem = self::prepareValue($item,$i,$data,$sheetKey,$week,$year,$data_from);
                 }else{
                     continue;
                 }
@@ -62,8 +62,9 @@ class ExcelDeal
        }
    }
 
-   private static function prepareValue($item,$i,$data,$sheetKey,$week,$year)
+   private static function prepareValue($item,$i,$data,$sheetKey,$week,$year,$data_from)
    {
+       $dataItem['data_from'] = $data_from;
        $dataItem['year'] = $year;
        $dataItem['week'] = $week;
        $dataItem['class'] = ($item[0]==null)?$data[$i-1]['class']:$item[0];
