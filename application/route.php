@@ -16,6 +16,12 @@ Route::group('api/:version/banner',function (){
     Route::get('','api/:version.Banner/getBanner');
 });
 
+Route::group('api/:version/info',function (){
+    Route::get('/:id','api/:version.Info/getDetailById',[],['id'=>'\d+']);
+    Route::get('','api/:version.Info/getInfo');
+
+});
+
 
 Route::group('api/:version/token',function (){
     Route::post('/app','api/:version.Token/getAppToken');

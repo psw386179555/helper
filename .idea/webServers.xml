@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="7d016610-1e3e-4c81-a655-fc7c0264e8b7" name="weixin.svenbarnett.cn" url="http://119.29.61.86">
-        <fileTransfer host="119.29.61.86" port="22" privateKey="C:\sven_wdcp_sshkey.ppk" rootFolder="/www/web/weixin/public_html" accessType="SFTP" keyPair="true">
+        <fileTransfer host="119.29.61.86" port="22" rootFolder="/www/web/weixin/public_html" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
